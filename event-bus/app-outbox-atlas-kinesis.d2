@@ -1,0 +1,24 @@
+kinesis: "Kinesis" {
+  icon: ../icons/aws/kinesis.svg
+  shape: image
+}
+
+node: "App" {
+  icon: ../icons/nodejs.svg
+  shape: image
+}
+
+db: "Database" {
+  icon: ../icons/database.png
+  shape: image
+}
+
+eventBridge: "Event Bridge" {
+  icon: ../icons/aws/event-bridge.svg
+  shape: image
+}
+
+direction: right
+node -> db: App stores events in DB
+db -> eventBridge: Atlas sends event
+eventBridge -> kinesis: Send events to Kinesis

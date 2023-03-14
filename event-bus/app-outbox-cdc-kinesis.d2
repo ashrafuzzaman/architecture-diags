@@ -1,0 +1,24 @@
+kinesis: "Kinesis" {
+  icon: ../icons/aws/kinesis.svg
+  shape: image
+}
+
+app: "App" {
+  icon: ../icons/nodejs.svg
+  shape: image
+}
+
+db: "Database" {
+  icon: ../icons/database.png
+  shape: image
+}
+
+cdc: "CDC" {
+  icon: ../icons/aws/dms.svg
+  shape: image
+}
+
+direction: right
+app -> db: App stores events in DB
+db -> cdc: Use replica to collect events
+cdc -> kinesis: Send events to Kinesis
