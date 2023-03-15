@@ -2,6 +2,20 @@ Happy path: {
   shape: sequence_diagram
   broker: Broker
 
+  db: "Database" {
+    width: 50
+    height: 50
+    icon: https://icons.terrastruct.com/essentials%2F117-database.svg
+    shape: image
+  }
+
+  broker: "Broker" {
+    width: 50
+    height: 50
+    icon: https://icons.terrastruct.com/aws%2FAnalytics%2FAmazon-Kinesis.svg
+    shape: image
+  }
+
   app1 -> db: Store data for event1
   app1 -> broker: enqueue event1
 
