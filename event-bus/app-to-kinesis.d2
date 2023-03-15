@@ -1,20 +1,20 @@
 kinesis: "Kinesis" {
-  icon: ../icons/aws/kinesis.svg
+  icon: https://icons.terrastruct.com/aws%2FAnalytics%2FAmazon-Kinesis.svg
   shape: image
 }
 
-node: "App" {
-  icon: ../icons/nodejs.svg
+app: "App" {
+  icon: https://icons.terrastruct.com/dev%2Fnodejs.svg  
   shape: image
 }
 
 db: "Database" {
-  icon: ../icons/database.png
+  icon: https://icons.terrastruct.com/essentials%2F117-database.svg
   shape: image
 }
 
 direction: right
-node -> kinesis: App sends events to kinesis
-node -> db: App stores events in DB
+app -> kinesis: App sends events to kinesis
+app -> db: App stores events in DB
 Worker -> kinesis: Send unsent events to Kinesis
 db <- Worker: pull unsent events

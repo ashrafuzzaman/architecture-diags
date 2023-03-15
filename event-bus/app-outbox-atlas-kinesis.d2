@@ -1,24 +1,24 @@
 kinesis: "Kinesis" {
-  icon: ../icons/aws/kinesis.svg
+  icon: https://icons.terrastruct.com/aws%2FAnalytics%2FAmazon-Kinesis.svg
   shape: image
 }
 
-node: "App" {
-  icon: ../icons/nodejs.svg
+app: "App" {
+  icon: https://icons.terrastruct.com/dev%2Fnodejs.svg  
   shape: image
 }
 
 db: "Database" {
-  icon: ../icons/database.png
+  icon: https://icons.terrastruct.com/essentials%2F117-database.svg
   shape: image
 }
 
 eventBridge: "Event Bridge" {
-  icon: ../icons/aws/event-bridge.svg
+  icon: https://icons.terrastruct.com/aws%2FApplication%20Integration%2FAmazon-EventBridge.svg
   shape: image
 }
 
 direction: right
-node -> db: App stores events in DB
+app -> db: App stores events in DB
 db -> eventBridge: Atlas sends event
 eventBridge -> kinesis: Send events to Kinesis

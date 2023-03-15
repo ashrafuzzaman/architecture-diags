@@ -1,0 +1,10 @@
+Happy path: {
+  shape: sequence_diagram
+  broker: Broker
+
+  app1 -> db: Store data for event1
+  app1 -> broker: enqueue event1
+
+  app2 -> db: Store data for event2
+  app2 -> broker: enqueue event2
+}

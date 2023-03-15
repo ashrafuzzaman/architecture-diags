@@ -1,0 +1,10 @@
+#!/bin/bash
+
+files=$(find . \( ! -regex '.*/\..*' \) -type f -name "*.d2")
+
+for file in $files;
+  do
+    png_file=$(echo $file | sed -E 's/(\w+)\.d2$/\1.png/')
+    d2 --layout elk $file out/$png_file
+  done
+
